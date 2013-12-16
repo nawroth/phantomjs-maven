@@ -9,7 +9,6 @@ import org.apache.maven.plugin.AbstractMojo;
 
 import org.openqa.selenium.os.CommandLine;
 import org.jboss.arquillian.phantom.resolver.PhantomJSBinaryResourceResolver;
-import org.jboss.arquillian.phantom.resolver.PhantomJSBinary;
 
 /**
  * Read the Code :)
@@ -25,11 +24,6 @@ public class Mojo extends AbstractMojo
 
     private String phantomJsPath()
     {
-        String path = CommandLine.find("phantomjs");
-        if (path != null) {
-            return path;
-        }
-
         getLog().info("Getting phantomjs from Maven");
         try {
             File temp = File.createTempFile("phantomjs-binary-", "");
